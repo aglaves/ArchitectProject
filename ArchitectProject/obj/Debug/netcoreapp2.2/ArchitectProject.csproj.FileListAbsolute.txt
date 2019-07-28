@@ -1,0 +1,14 @@
+D:\development\dotNet\ArchitectProject\ArchitectProject\bin\Debug\netcoreapp2.2\ArchitectProject.deps.json
+D:\development\dotNet\ArchitectProject\ArchitectProject\bin\Debug\netcoreapp2.2\ArchitectProject.runtimeconfig.json
+D:\development\dotNet\ArchitectProject\ArchitectProject\bin\Debug\netcoreapp2.2\ArchitectProject.runtimeconfig.dev.json
+D:\development\dotNet\ArchitectProject\ArchitectProject\bin\Debug\netcoreapp2.2\ArchitectProject.dll
+D:\development\dotNet\ArchitectProject\ArchitectProject\bin\Debug\netcoreapp2.2\ArchitectProject.pdb
+D:\development\dotNet\ArchitectProject\ArchitectProject\obj\Debug\netcoreapp2.2\ArchitectProject.csprojAssemblyReference.cache
+D:\development\dotNet\ArchitectProject\ArchitectProject\obj\Debug\netcoreapp2.2\ArchitectProject.csproj.CoreCompileInputs.cache
+D:\development\dotNet\ArchitectProject\ArchitectProject\obj\Debug\netcoreapp2.2\ArchitectProject.RazorAssemblyInfo.cache
+D:\development\dotNet\ArchitectProject\ArchitectProject\obj\Debug\netcoreapp2.2\ArchitectProject.RazorAssemblyInfo.cs
+D:\development\dotNet\ArchitectProject\ArchitectProject\obj\Debug\netcoreapp2.2\ArchitectProject.AssemblyInfoInputs.cache
+D:\development\dotNet\ArchitectProject\ArchitectProject\obj\Debug\netcoreapp2.2\ArchitectProject.AssemblyInfo.cs
+D:\development\dotNet\ArchitectProject\ArchitectProject\obj\Debug\netcoreapp2.2\ArchitectProject.RazorTargetAssemblyInfo.cache
+D:\development\dotNet\ArchitectProject\ArchitectProject\obj\Debug\netcoreapp2.2\ArchitectProject.dll
+D:\development\dotNet\ArchitectProject\ArchitectProject\obj\Debug\netcoreapp2.2\ArchitectProject.pdb
