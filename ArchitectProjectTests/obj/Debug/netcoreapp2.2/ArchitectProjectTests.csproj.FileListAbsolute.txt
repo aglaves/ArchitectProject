@@ -1,0 +1,17 @@
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\ArchitectProjectTests.deps.json
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\ArchitectProjectTests.runtimeconfig.json
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\ArchitectProjectTests.runtimeconfig.dev.json
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\ArchitectProjectTests.dll
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\ArchitectProjectTests.pdb
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\obj\Debug\netcoreapp2.2\ArchitectProjectTests.csproj.CoreCompileInputs.cache
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\obj\Debug\netcoreapp2.2\ArchitectProjectTests.AssemblyInfoInputs.cache
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\obj\Debug\netcoreapp2.2\ArchitectProjectTests.AssemblyInfo.cs
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\obj\Debug\netcoreapp2.2\ArchitectProjectTests.dll
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\obj\Debug\netcoreapp2.2\ArchitectProjectTests.pdb
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\ArchitectProject.dll
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\bin\Debug\netcoreapp2.2\ArchitectProject.pdb
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\obj\Debug\netcoreapp2.2\ArchitectProjectTests.csprojAssemblyReference.cache
+D:\development\dotNet\ArchitectProject\ArchitectProjectTests\obj\Debug\netcoreapp2.2\ArchitectProjectTests.csproj.CopyComplete
