@@ -8,7 +8,7 @@ namespace ArchitectProjectTests.Security
         [Fact]
         public void TestBuildStaticToken()
         {
-            JwtSecurityKey.UseGuid = false;
+            JwtSecurityKey.UseDynamicToken = false;
             JwtTokenBuilder jwtTokenBuilder = new JwtTokenBuilder();
             JwtToken token = jwtTokenBuilder
                                 .AddSecurityKey(JwtSecurityKey.Create("MyTestKeyMustBeAtLeast16CharactesInLength."))

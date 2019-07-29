@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 namespace ArchitectProject.Security
 {
@@ -41,18 +40,6 @@ namespace ArchitectProject.Security
             return this;
         }
 
-        public JwtTokenBuilder AddClaim(string type, string value)
-        {
-            this.claims.Add(type, value);
-            return this;
-        }
-
-        public JwtTokenBuilder AddClaims(Dictionary<string, string> claims)
-        {
-            this.claims.Union(claims);
-            return this;
-        }
-
         public JwtTokenBuilder AddExpiry(int expiryInMinutes)
         {
             this.expiryInMinutes = expiryInMinutes;
@@ -61,8 +48,8 @@ namespace ArchitectProject.Security
 
         public JwtToken Build()
         {
-            EnsureArguments();
-            if (JwtSecurityKey.UseGuid)
+            ValidateRequiredFields();
+            if (JwtSecurityKey.UseDynamicToken)
                 return CreateDynamicToken();
             else
                 return CreateStaticToken();
@@ -107,9 +94,7 @@ namespace ArchitectProject.Security
             return claims;
         }
 
-        #region " private "
-
-        private void EnsureArguments()
+        private void ValidateRequiredFields()
         {
             if (this.securityKey == null)
                 throw new ArgumentNullException("Security Key");
@@ -123,7 +108,5 @@ namespace ArchitectProject.Security
             if (string.IsNullOrEmpty(this.audience))
                 throw new ArgumentNullException("Audience");
         }
-
-        #endregion
     }
 }

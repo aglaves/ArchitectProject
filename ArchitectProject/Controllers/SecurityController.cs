@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ArchitectProject.Security;
+﻿using ArchitectProject.Security;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -16,7 +11,7 @@ namespace ArchitectProject.Controllers
     public class SecurityController : ControllerBase
     {
         private readonly AppSettings appSettings;
-        private ILogger logger;
+        private readonly ILogger logger;
 
         public SecurityController(IOptions<AppSettings> appSettings, ILogger<SecurityController> logger)
         {
@@ -27,9 +22,9 @@ namespace ArchitectProject.Controllers
         [Route("newToken")]
         [HttpGet("{username}")]
         [AllowAnonymous]
-        public ActionResult<string> Get([FromQuery] string Username)
+        public ActionResult<string> GetNewToken([FromQuery] string Username)
         {
-            logger.LogInformation("Use Guid: " + JwtSecurityKey.IsUseGuid());
+            logger.LogDebug("Use Dynamic Token: " + JwtSecurityKey.UseDynamicToken);
             var token = new JwtTokenBuilder()
                                 .AddSecurityKey(JwtSecurityKey.Create(appSettings.SecretKey))
                                 .AddSubject(Username)

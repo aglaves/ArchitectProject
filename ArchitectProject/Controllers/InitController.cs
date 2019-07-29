@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ArchitectProject.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class InitController
+    public class InitController : ControllerBase
     {
         [HttpGet]
-        public ActionResult<string> Get()
+        [HttpPost]
+        public ActionResult<string> Status()
         {
-            return "All systems are go!";
+            return Ok("All systems are go!");
         }
     }
 }
