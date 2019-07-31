@@ -1,13 +1,17 @@
-﻿using ArchitectProject.Models;
+﻿using ArchitectProject.Http;
+using ArchitectProject.Models;
+using ArchitectProject.Parsers;
 using ArchitectProject.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System;
 
 namespace ArchitectProject
 {
@@ -22,6 +26,10 @@ namespace ArchitectProject
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<FormOptions>(options =>
+            {
+                options.MemoryBufferThreshold = Int32.MaxValue;
+            });
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
             var appSettings = Configuration.GetSection(nameof(AppSettings)).Get<AppSettings>();
@@ -42,7 +50,8 @@ namespace ArchitectProject
               });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<EntityContext>(opt => opt.UseInMemoryDatabase("EntityDatabase"));
-
+            services.AddTransient<QuantityOnHandFileParser, ByteArrayQuantityOnHandFileParser>();
+            services.AddTransient<HttpRequestFileExtractor, InMemoryHttpRequestFileExtractor>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

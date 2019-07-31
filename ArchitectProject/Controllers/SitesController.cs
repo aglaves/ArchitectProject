@@ -30,7 +30,7 @@ namespace ArchitectProject.Controllers
                 return NoContent();
             }
 
-            Site site = await entityContext.SiteItems.FindAsync(npi);
+            Site site = await entityContext.Sites.FindAsync(npi);
             if (site == null)
                 return NotFound();
             return Ok(site);
@@ -41,17 +41,39 @@ namespace ArchitectProject.Controllers
         {
             if (site == null)
             {
-                logger.LogInformation("Site is null.");
+                logger.LogDebug("Site is null.");
                 return NoContent();
             }
             else
             {
-                logger.LogInformation("Site NPI: " + site.NPI);
-                logger.LogInformation("Site SiteName: " + site.SiteName);
-                entityContext.Add(site);
+                logger.LogDebug("Site NPI: " + site.NPI);
+                logger.LogDebug("Site SiteName: " + site.SiteName);
+                if (entityContext.Find<Site>(site.NPI) == null)
+                    entityContext.Add(site);
+                else
+                    entityContext.Update(site);
                 await entityContext.SaveChangesAsync();
                 return CreatedAtAction(nameof(GetSiteByNPI), new { site.NPI }, site);
             }    
+        }
+
+        [HttpGet("{npi}/inventory-summary", Name = "InventorySummary")]
+        public ActionResult<InventorySummary> GetInventorySummary(string npi) {
+            logger.LogDebug("Inventory summary request for {0}", npi);
+            logger.LogTrace("Total number of inventory summary details: {0}", entityContext.InventorySummaries.Count);
+            Site site = entityContext.Find<Site>(npi);
+            InventorySummary inventorySummaryDetails;
+            if (entityContext.InventorySummaries.ContainsKey(site))
+            {
+                logger.LogDebug("Found Inventory Summary Detail.");
+                inventorySummaryDetails = entityContext.InventorySummaries[site];
+            }
+            else
+            {
+                logger.LogDebug("No Inventory Summary Detail for site.");
+                inventorySummaryDetails = new InventorySummary();
+            }
+            return Ok(inventorySummaryDetails);
         }
     }
 }

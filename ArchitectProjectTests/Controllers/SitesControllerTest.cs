@@ -63,7 +63,7 @@ namespace ArchitectProjectTests.Controllers
 
             SitesController sitesController = new SitesController(entityContext, CreateLogger());
             await sitesController.AddSite(CreateSite("999888777", "Site for Add Test"));
-            Site site = entityContext.SiteItems.Find("999888777");
+            Site site = entityContext.Sites.Find("999888777");
             Assert.Equal("999888777", site.NPI);
             Assert.Equal("Site for Add Test", site.SiteName);
         }
